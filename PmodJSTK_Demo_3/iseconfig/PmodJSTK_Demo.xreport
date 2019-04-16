@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2019-04-15T17:23:45</DateModified>
+  <DateModified>2019-04-15T17:28:45</DateModified>
   <ModuleName>PmodJSTK_Demo</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>C:/Users/haoqi/Desktop/EE354/PmodJSTK_Demo_3/iseconfig/PmodJSTK_Demo.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/haoqi/Desktop/EE354/PmodJSTK_Demo_3\</ImplementationReportsDirectory>
+  <SavedFilePath>C:/Users/haoqi/Desktop/EE354FP/PaperCut/PmodJSTK_Demo_3/iseconfig/PmodJSTK_Demo.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/haoqi/Desktop/EE354FP/PaperCut/PmodJSTK_Demo_3\</ImplementationReportsDirectory>
   <DateInitialized>2012-06-28T15:49:46</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

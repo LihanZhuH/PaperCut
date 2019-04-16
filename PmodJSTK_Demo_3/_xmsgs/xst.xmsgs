@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\Users\haoqi\Desktop\EE354\PmodJSTK_Demo_3\PmodJSTK_Demo.v" Line 186: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:\Users\haoqi\Desktop\EE354\PmodJSTK_Demo_3\PmodJSTK_Demo.v" Line 86: Net &lt;<arg fmt="%s" index="1">sndData[7]</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:\Users\haoqi\Desktop\EE354\PmodJSTK_Demo_3\PmodJSTK_Demo.v" Line 106: Net &lt;<arg fmt="%s" index="1">sndData_D[7]</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">SW&lt;2:1&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">sndData</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">sndData_D</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">tmpSR_32</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">tmpSR_33</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">tmpSR_34</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">tmpSR_35</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">tmpSR_36</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">tmpSR_37</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">tmpSR_38</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">tmpSR_39</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_16</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_17</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_18</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_19</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_20</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_21</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_22</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_23</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_24</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_25</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_27</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_28</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_29</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_30</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_31</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_32</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_33</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_34</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_35</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_36</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_37</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_38</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_39</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_27</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_28</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_29</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_30</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DOUT_31</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Ctrl</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="3231" delta="old" >The small RAM &lt;<arg fmt="%s" index="1">Mram_CNT[1]_GND_6_o_wide_mux_10_OUT</arg>&gt; will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+</msg>
+
+<msg type="warning" file="Xst" num="1989" delta="old" >Unit &lt;<arg fmt="%s" index="1">PmodJSTK_Demo</arg>&gt;: instances &lt;<arg fmt="%s" index="2">genSndRec</arg>&gt;, &lt;<arg fmt="%s" index="3">genSndRec2</arg>&gt; of unit &lt;<arg fmt="%s" index="4">ClkDiv_5Hz</arg>&gt; are equivalent, second instance is removed
+</msg>
+
+<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Int/wSR_0</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">PmodJSTK_Demo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Int/wSR_1</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">PmodJSTK_Demo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Int/wSR_2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">PmodJSTK_Demo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Int/wSR_3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">PmodJSTK_Demo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Int/wSR_4</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">PmodJSTK_Demo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Int/wSR_5</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">PmodJSTK_Demo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Int/wSR_6</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">PmodJSTK_Demo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Int/wSR_7</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">PmodJSTK_Demo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Int/wSR_0</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">PmodJSTK_Demo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Int/wSR_1</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">PmodJSTK_Demo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Int/wSR_2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">PmodJSTK_Demo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Int/wSR_3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">PmodJSTK_Demo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Int/wSR_4</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">PmodJSTK_Demo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Int/wSR_5</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">PmodJSTK_Demo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Int/wSR_6</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">PmodJSTK_Demo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Int/wSR_7</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">PmodJSTK_Demo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Ctrl/sndData_0</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">PmodJSTK_Demo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Ctrl/sndData_1</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">PmodJSTK_Demo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Ctrl/sndData_2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">PmodJSTK_Demo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Ctrl/sndData_3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">PmodJSTK_Demo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Ctrl/sndData_4</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">PmodJSTK_Demo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Ctrl/sndData_5</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">PmodJSTK_Demo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Ctrl/sndData_6</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">PmodJSTK_Demo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Ctrl/sndData_7</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">PmodJSTK_Demo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/sndData_0</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">PmodJSTK_Demo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/sndData_1</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">PmodJSTK_Demo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/sndData_2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">PmodJSTK_Demo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/sndData_3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">PmodJSTK_Demo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/sndData_4</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">PmodJSTK_Demo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/sndData_5</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">PmodJSTK_Demo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/sndData_6</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">PmodJSTK_Demo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/sndData_7</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">PmodJSTK_Demo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_39</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_38</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_37</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_36</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_35</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_34</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_33</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_32</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_31</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_30</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_29</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_28</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_27</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_25</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_24</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_23</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_22</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_21</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_20</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_19</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_18</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_17</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_16</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/DOUT_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_39</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_38</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_37</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_36</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_35</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_34</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_33</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_32</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_31</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_30</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_29</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_28</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_27</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_25</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_24</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_23</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_22</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_21</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_20</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_19</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_18</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_17</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_16</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Ctrl/tmpSR_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Ctrl/DOUT_31</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Ctrl/DOUT_30</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Ctrl/DOUT_29</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Ctrl/DOUT_28</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Ctrl/DOUT_27</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Ctrl/DOUT_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Ctrl/DOUT_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Ctrl/DOUT_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Ctrl/DOUT_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Ctrl/DOUT_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Ctrl/DOUT_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Ctrl/DOUT_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Ctrl/DOUT_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Ctrl/DOUT_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Ctrl/DOUT_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Ctrl/DOUT_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Ctrl/DOUT_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Ctrl/DOUT_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Ctrl/DOUT_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int2/SPI_Ctrl/DOUT_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Int/rSR_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Int/rSR_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Int/rSR_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Int/rSR_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SPI_Int/rSR_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SerialClock/clkCount_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;PmodJSTK_Int2/SerialClock/clkCount_2&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SerialClock/clkCount_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;PmodJSTK_Int2/SerialClock/clkCount_3&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SerialClock/clkCount_4</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;PmodJSTK_Int2/SerialClock/clkCount_4&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SerialClock/clkCount_5</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;PmodJSTK_Int2/SerialClock/clkCount_5&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SerialClock/clkCount_6</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;PmodJSTK_Int2/SerialClock/clkCount_6&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SerialClock/clkCount_7</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;PmodJSTK_Int2/SerialClock/clkCount_7&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SerialClock/clkCount_8</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;PmodJSTK_Int2/SerialClock/clkCount_8&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SerialClock/clkCount_9</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;PmodJSTK_Int2/SerialClock/clkCount_9&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SerialClock/CLKOUT</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;PmodJSTK_Int2/SerialClock/CLKOUT&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SerialClock/clkCount_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;PmodJSTK_Int2/SerialClock/clkCount_0&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">PmodJSTK_Int/SerialClock/clkCount_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">PmodJSTK_Demo</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;PmodJSTK_Int2/SerialClock/clkCount_1&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2169" delta="old" >HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+</msg>
+
+</messages>
+

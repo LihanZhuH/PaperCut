@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\haoqi\Desktop\EE354\PmodJSTK_Demo_3\PmodJSTK_Demo.ncd
+OUTFILE=C:\Users\haoqi\Desktop\EE354\PmodJSTK_Demo_3\PmodJSTK_Demo.bit
+FAMILY=Spartan6
+PART=xc6slx16-3csg324
+WORKINGDIR=C:\Users\haoqi\Desktop\EE354\PmodJSTK_Demo_3
+LICENSE=ISE
+USER_INFO=174127445_174127446_210653472_101

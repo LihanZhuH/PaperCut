@@ -1,0 +1,8 @@
+verilog work "SPImode0.v"
+verilog work "spiCtrl.v"
+verilog work "ClkDiv_66_67kHz.v"
+verilog work "Binary_To_BCD.v"
+verilog work "ssdCtrl.v"
+verilog work "PmodJSTK.v"
+verilog work "ClkDiv_5Hz.v"
+verilog work "PmodJSTK_Demo.v"

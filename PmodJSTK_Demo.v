@@ -189,8 +189,38 @@ module PmodJSTK_Demo(
 			//................................................. VGA block
 			//.................................................
 			// .................................................
-			
+			// Use state of switch 0 to select output of X position or Y position data to SSD
+			assign tempA = (SW[0] == 1'b1) ? {jstkData_D[9:8], jstkData_D[23:16]} : {jstkData_D[25:24], jstkData_D[39:32]};
+			// assign posData_D = (SW[0] == 1'b1) ? {jstkData_D[9:8], jstkData_D[23:16]} : {jstkData_D[25:24], jstkData_D[39:32]};
+			assign posData = (tempA > 500) ? 1 : 0; 
 
+			localparam
+				STILL = 3'b000,
+				LEFT = 3'b001,
+				RIGHT = 3'b010,
+				UP = 3'b011,
+				DOWN = 3'b100,
+				LOWTH = 350,
+				UPTH = 650;
+
+			wire [2:0] dir;
+
+			wire [9: 0] tempLR;
+			assign tempLR = {jstkData_D[25:24], jstkData_D[39:32]};
+			
+			wire [9: 0] tempUD;
+			assign tempUD = {jstkData_D[9:8], jstkData_D[23:16]};
+
+			wire [9:0] distLR;
+			wire [9:0] distUP;
+			assign distLR = (tempLR > 500) ? tempLR - 500 : 500 - tempLR;
+			assign distUP = (tempUD > 500) ? tempUD - 500 : 500 - tempUD;
+
+			assign dir = 	(distLR < 100 && distUP < 100) ? STILL :
+							(distLR > distUP && tempLR >= UPTH) ? RIGHT :
+							(distLR > distUP && tempLR <= LOWTH) ? LEFT :
+							(distLR < distUP && tempUD >= UPTH) ? UP : DOWN;
+			
 			wire reset, clk, board_clk;
 			BUF BUF2 (reset, SW[0]);
 			BUF BUF1 (board_clk, CLK); 	
@@ -214,20 +244,61 @@ module PmodJSTK_Demo(
 			wire [9:0] CounterY;
 			hvsync_generator syncgen(.clk(clk), .reset(reset),.vga_h_sync(vga_h_sync), .vga_v_sync(vga_v_sync), .inDisplayArea(inDisplayArea), .CounterX(CounterX), .CounterY(CounterY));
 
-			reg [9:0] position;
-	
+			reg [9:0] positionY;
+			reg [9:0] positionX;
+
+
+			reg [2:0] board [0:480];
+			localparam
+				QEMPTY = 3'b000,
+				QRED_FILL = 3'b001,
+				QRED_PATH = 3'b010,
+				QGREEN_FILL = 3'b001,
+				QGREEN_PATH = 3'b010;
+			// initialize board
+			integer i;
+			
+			initial begin
+				for (i = 0; i <= 480; i = i + 1) begin
+					board[i] = QEMPTY;
+				end
+			end
+
+			
+
+
 			always @(posedge DIV_CLK[21])
 				begin
-					if(reset)
-						position<=240;
-					else if(btnL && ~btnR)
-						position<=position+2;
-					else if(btnR && ~btnL)
-						position<=position-2;	
+					// if (reset)
+					// 	// positionY<=240;
+					// 	// positionX<=240;
+					if (dir == UP)
+						positionY <= positionY - 2;
+					else if (dir == DOWN)
+						positionY <= positionY + 2;
+					else if (dir == LEFT)
+						positionX <= positionX - 2;
+					else if (dir == RIGHT)
+						positionX <= positionX + 2;	
+
+					board[{ 3'b000, positionY[9:3]} * 80 + {3'b000, positionX[9:3]}] <= QRED_PATH; 
 				end
 
-			wire R = CounterY>=(position-10) && CounterY<=(position+10) && CounterX[8:5]==7;
-			wire G = CounterX>100 && CounterX<200 && CounterY[5:3]==7;
+			// always @(posedge DIV_CLK[21])
+			// 	begin
+			// 		if(reset)
+			// 			positionX<=240;
+			// 		else if(U_DBAR)
+			// 			positionX<=positionX+2;
+			// 		else 
+			// 			positionX<=positionX-2;	
+			// 	end
+
+			wire R = (board[{3'b000, CounterY[9:3]} * 80 + {3'b000, CounterX[9:3]}] == QRED_PATH 
+				||board[{3'b000, CounterY[9:3]} * 80 + {3'b000, CounterX[9:3]}] == QRED_FILL); 
+					// CounterY>=({positionY[9:3], 3'b000}) && CounterY<=({positionY[9:3], 3'b111}) 
+			// 		&& CounterX>=({positionX[9:3], 3'b000}) && CounterX<=({positionX[9:3], 3'b111});
+			wire G = 0; //  CounterX>100 && CounterX<200 && CounterY[5:3]==7;
 			wire B = 0;
 			
 			always @(posedge clk)
@@ -239,10 +310,9 @@ module PmodJSTK_Demo(
 			//..................................................
 			//..................................................
 			
-			// Use state of switch 0 to select output of X position or Y position data to SSD
-			assign tempA = (SW[0] == 1'b1) ? {jstkData_D[9:8], jstkData_D[23:16]} : {jstkData_D[25:24], jstkData_D[39:32]};
-			// assign posData_D = (SW[0] == 1'b1) ? {jstkData_D[9:8], jstkData_D[23:16]} : {jstkData_D[25:24], jstkData_D[39:32]};
-			assign posData = (tempA > 500) ? 1 : 0; 
+			
+
+
 			
 			// Data to be sent to PmodJSTK, lower two bits will turn on leds on PmodJSTK
 			// assign sndData = {8'b100000, {SW[1], SW[2]}};

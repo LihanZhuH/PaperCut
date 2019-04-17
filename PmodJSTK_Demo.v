@@ -248,7 +248,7 @@ module PmodJSTK_Demo(
 			reg [9:0] positionX;
 
 
-			reg [2:0] board [0:480];
+			reg [2:0] board [0:4800];
 			localparam
 				QEMPTY = 3'b000,
 				QRED_FILL = 3'b001,
@@ -259,7 +259,7 @@ module PmodJSTK_Demo(
 			integer i;
 			
 			initial begin
-				for (i = 0; i <= 480; i = i + 1) begin
+				for (i = 0; i <= 4800; i = i + 1) begin
 					board[i] = QEMPTY;
 				end
 			end
@@ -280,6 +280,15 @@ module PmodJSTK_Demo(
 						positionX <= positionX - 2;
 					else if (dir == RIGHT)
 						positionX <= positionX + 2;	
+					
+					// if (positionX < 0) 
+					// 	positionX <= 0;
+					// if (positionX > 640)
+					// 	positionX <= 640;
+					// if (positionY < 0) 
+					// 	positionY <= 0;
+					// if (positionY > 480)
+					// 	positionY <= 480;
 
 					board[{ 3'b000, positionY[9:3]} * 80 + {3'b000, positionX[9:3]}] <= QRED_PATH; 
 				end

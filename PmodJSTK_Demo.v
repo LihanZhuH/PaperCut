@@ -54,6 +54,15 @@ module PmodJSTK_Demo(
 	St_ce_bar, St_rp_bar, Mt_ce_bar, Mt_St_oe_bar, Mt_St_we_bar
     );
 
+	// integer k;
+	// integer q;
+	// reg [3:0] b [0:3] [0:3];
+	// initial begin
+	// 	for (k = 0; k <= 3; k = k + 1)
+	// 		for (q = 0; q <= 3; q = q + 1)
+	// 			b[k][q] = 3'b000;
+	// end
+
 	// ===========================================================================
 	// 										Port Declarations
 	// ===========================================================================
@@ -190,11 +199,12 @@ module PmodJSTK_Demo(
 			//.................................................
 			// .................................................
 			// Use state of switch 0 to select output of X position or Y position data to SSD
-			assign tempA = (SW[0] == 1'b1) ? {jstkData_D[9:8], jstkData_D[23:16]} : {jstkData_D[25:24], jstkData_D[39:32]};
+			assign tempA = (SW[0] == 1'b1) ? {jstkData[9:8], jstkData[23:16]} : {jstkData[25:24], jstkData[39:32]};
 			// assign posData_D = (SW[0] == 1'b1) ? {jstkData_D[9:8], jstkData_D[23:16]} : {jstkData_D[25:24], jstkData_D[39:32]};
 			assign posData = (tempA > 500) ? 1 : 0; 
 
 			localparam
+				// DIRECTIONS
 				STILL = 3'b000,
 				LEFT = 3'b001,
 				RIGHT = 3'b010,
@@ -203,6 +213,8 @@ module PmodJSTK_Demo(
 				LOWTH = 350,
 				UPTH = 650;
 
+
+			// for player 1 .................................
 			wire [2:0] dir;
 
 			wire [9: 0] tempLR;
@@ -220,7 +232,26 @@ module PmodJSTK_Demo(
 							(distLR > distUP && tempLR >= UPTH) ? RIGHT :
 							(distLR > distUP && tempLR <= LOWTH) ? LEFT :
 							(distLR < distUP && tempUD >= UPTH) ? UP : DOWN;
+			// for player 2 .................................
+			wire [2:0] dir2;
+
+			wire [9: 0] tempLR2;
+			assign tempLR2 = {jstkData[25:24], jstkData[39:32]};
 			
+			wire [9: 0] tempUD2;
+			assign tempUD2 = {jstkData[9:8], jstkData[23:16]};
+
+			wire [9:0] distLR2;
+			wire [9:0] distUP2;
+			assign distLR2 = (tempLR2 > 500) ? tempLR2 - 500 : 500 - tempLR2;
+			assign distUP2 = (tempUD2 > 500) ? tempUD2 - 500 : 500 - tempUD2;
+
+			assign dir2 = 	(distLR2 < 100 && distUP2 < 100) ? STILL :
+							(distLR2 > distUP2 && tempLR2 >= UPTH) ? RIGHT :
+							(distLR2 > distUP2 && tempLR2 <= LOWTH) ? LEFT :
+							(distLR2 < distUP2 && tempUD2 >= UPTH) ? UP : DOWN;
+		// ..............................................
+					
 			wire reset, clk, board_clk;
 			BUF BUF2 (reset, SW[0]);
 			BUF BUF1 (board_clk, CLK); 	
@@ -246,32 +277,56 @@ module PmodJSTK_Demo(
 
 			reg [9:0] positionY;
 			reg [9:0] positionX;
+			reg [9:0] positionY2;
+			reg [9:0] positionX2;
 
+			// reg [2:0] board [0:600]; // 20 * 20
 
-			reg [2:0] board [0:4800];
+		
+			
 			localparam
 				QEMPTY = 3'b000,
 				QRED_FILL = 3'b001,
 				QRED_PATH = 3'b010,
-				QGREEN_FILL = 3'b001,
-				QGREEN_PATH = 3'b010;
-			// initialize board
-			integer i;
+				QGREEN_FILL = 3'b011,
+				QGREEN_PATH = 3'b100;
+			// // initialize board
+			// integer i;
 			
+			// initial begin
+			// 	for (i = 0; i <= 600; i = i + 1) begin
+			// 		board[i] = QEMPTY;
+			// 	end
+			// end
+
+			integer k;
+			integer q;
+			reg [2:0] board [0:10] [0:10]; // 30 * 20
 			initial begin
-				for (i = 0; i <= 4800; i = i + 1) begin
-					board[i] = QEMPTY;
-				end
+				for (k = 0; k <= 10; k = k + 1)
+					for (q = 0; q <= 10; q = q + 1)
+						board[k][q] = QEMPTY;
+				board[0][0] = QRED_FILL;
+				board[0][1] = QRED_FILL;
+				board[1][0] = QRED_FILL;
+				board[1][1] = QRED_FILL;
 			end
 
+			integer indexI;
+			integer indexJ;
 			
-
+			// RENDERING STATES
+			reg [1:0] DRState;
+			localparam
+				DSTART = 3'b00,
+				DMR = 3'b01,
+				DRF = 3'b10;
 
 			always @(posedge DIV_CLK[21])
 				begin
 					// if (reset)
-					// 	// positionY<=240;
-					// 	// positionX<=240;
+					// 	positionY<=16;
+					// 	positionX<=16;
 					if (dir == UP)
 						positionY <= positionY - 2;
 					else if (dir == DOWN)
@@ -280,8 +335,40 @@ module PmodJSTK_Demo(
 						positionX <= positionX - 2;
 					else if (dir == RIGHT)
 						positionX <= positionX + 2;	
-					
-					// if (positionX < 0) 
+
+					// player2 ....................
+					if (dir2 == UP)
+						positionY2 <= positionY2 - 2;
+					else if (dir2 == DOWN)
+						positionY2 <= positionY2 + 2;
+					else if (dir2 == LEFT)
+						positionX2 <= positionX2 - 2;
+					else if (dir2 == RIGHT)
+						positionX2 <= positionX2 + 2;	
+					// ............................
+					// drawing ....................
+					// if (board[{4'b0000, positionX[9:4]}][{ 4'b0000, positionY[9:4]}] == QRED_FILL) begin
+					// 	for (indexI = 0; indexI <= 30; indexI = indexI + 1) begin
+					// 		DRState = DSTART;
+					// 		for (indexJ = 0; indexJ <= 20; indexJ = indexJ + 1) begin
+					// 			case (DRState)
+					// 				DSTART: begin
+					// 					if (board[indexI][indexJ] == QRED_FILL || board[indexI][indexJ] == QRED_PATH) begin
+					// 						DRState = D
+					// 					end
+					// 				end
+					// 				DMR: begin
+
+					// 				end
+					// 			endcase
+					// 		end
+					// 	end
+					// end
+					// ............................
+
+
+
+					// if (positionX < 0)
 					// 	positionX <= 0;
 					// if (positionX > 640)
 					// 	positionX <= 640;
@@ -290,26 +377,24 @@ module PmodJSTK_Demo(
 					// if (positionY > 480)
 					// 	positionY <= 480;
 
-					board[{ 3'b000, positionY[9:3]} * 80 + {3'b000, positionX[9:3]}] <= QRED_PATH; 
+					// board[{ 4'b000, positionY[9:4]} * 30 + {4'b000, positionX[9:4]}] <= QRED_PATH; 
+					// board[{ 4'b000, positionY2[9:4]} * 30 + {4'b000, positionX2[9:4]}] <= QGREEN_PATH; 
+					board[{4'b0000, positionX[9:4]}][{ 4'b0000, positionY[9:4]}] <= QRED_PATH;
+					board[{4'b0000, positionX2[9:4]}][{ 4'b0000, positionY2[9:4]}] <= QGREEN_PATH;
 				end
 
-			// always @(posedge DIV_CLK[21])
-			// 	begin
-			// 		if(reset)
-			// 			positionX<=240;
-			// 		else if(U_DBAR)
-			// 			positionX<=positionX+2;
-			// 		else 
-			// 			positionX<=positionX-2;	
-			// 	end
-
-			wire R = (board[{3'b000, CounterY[9:3]} * 80 + {3'b000, CounterX[9:3]}] == QRED_PATH 
-				||board[{3'b000, CounterY[9:3]} * 80 + {3'b000, CounterX[9:3]}] == QRED_FILL); 
+			wire R = (board[{4'b0000, CounterX[9:4]}][{4'b0000, CounterY[9:4]}] == QRED_PATH 
+				||board[{4'b0000, CounterX[9:4]}][{4'b0000, CounterY[9:4]}] == QRED_FILL); 
 					// CounterY>=({positionY[9:3], 3'b000}) && CounterY<=({positionY[9:3], 3'b111}) 
 			// 		&& CounterX>=({positionX[9:3], 3'b000}) && CounterX<=({positionX[9:3], 3'b111});
-			wire G = 0; //  CounterX>100 && CounterX<200 && CounterY[5:3]==7;
+			wire G = (board[{4'b0000, CounterX[9:4]}][{4'b0000, CounterY[9:4]}] == QGREEN_PATH 
+				||board[{4'b0000, CounterX[9:4]}][{4'b0000, CounterY[9:4]}] == QGREEN_FILL);  
+			//(board[{3'b000, CounterY[9:3]} * 30 + {3'b000, CounterX[9:3]}] == QGREEN_PATH 
+			//	||board[{3'b000, CounterY[9:3]} * 30 + {3'b000, CounterX[9:3]}] == QGREEN_FILL); //  CounterX>100 && CounterX<200 && CounterY[5:3]==7;
 			wire B = 0;
 			
+		
+
 			always @(posedge clk)
 			begin
 				vga_r <= R & inDisplayArea;

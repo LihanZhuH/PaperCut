@@ -69,7 +69,7 @@ module PmodJSTK_Demo(
 			input CLK;					// 100Mhz onboard clock
 			input RST;					// Button D
 			input MISO;					// Master In Slave Out, Pin 3, Port JA
-			input [2:0] SW;			// Switches 2, 1, and 0
+			input [7:0] SW;			// Switches 2, 1, and 0
 			output SS;					// Slave Select, Pin 1, Port JA
 			output MOSI;				// Master Out Slave In, Pin 2, Port JA
 			output SCLK;				// Serial Clock, Pin 4, Port JA
@@ -201,7 +201,7 @@ module PmodJSTK_Demo(
 			// Use state of switch 0 to select output of X position or Y position data to SSD
 			assign tempA = (SW[0] == 1'b1) ? {jstkData[9:8], jstkData[23:16]} : {jstkData[25:24], jstkData[39:32]};
 			// assign posData_D = (SW[0] == 1'b1) ? {jstkData_D[9:8], jstkData_D[23:16]} : {jstkData_D[25:24], jstkData_D[39:32]};
-			assign posData = (tempA > 500) ? 1 : 0; 
+			// assign posData = (tempA > 500) ? 1 : 0; 
 
 			localparam
 				// DIRECTIONS
@@ -232,6 +232,10 @@ module PmodJSTK_Demo(
 							(distLR > distUP && tempLR >= UPTH) ? RIGHT :
 							(distLR > distUP && tempLR <= LOWTH) ? LEFT :
 							(distLR < distUP && tempUD >= UPTH) ? UP : DOWN;
+
+			wire shoot1, shoot2;
+			assign shoot2 = jstkData[1];
+			assign shoot1 = jstkData_D[1];
 			// for player 2 .................................
 			wire [2:0] dir2;
 
@@ -250,10 +254,13 @@ module PmodJSTK_Demo(
 							(distLR2 > distUP2 && tempLR2 >= UPTH) ? RIGHT :
 							(distLR2 > distUP2 && tempLR2 <= LOWTH) ? LEFT :
 							(distLR2 < distUP2 && tempUD2 >= UPTH) ? UP : DOWN;
+
+			
+
 		// ..............................................
 					
 			wire reset, clk, board_clk;
-			BUF BUF2 (reset, SW[0]);
+			BUF BUF2 (reset, SW[7]);
 			BUF BUF1 (board_clk, CLK); 	
 			// BUF BUF2 (reset, Sw0);
 			// BUF BUF3 (start, Sw1);
@@ -280,6 +287,17 @@ module PmodJSTK_Demo(
 			reg [9:0] positionY2;
 			reg [9:0] positionX2;
 
+			reg [2:0] shootDir1;
+			reg [2:0] shootDir2;
+
+			initial begin
+				shootDir1 = RIGHT;
+				shootDir2 = LEFT;
+			end
+
+
+
+	
 			// reg [2:0] board [0:600]; // 20 * 20
 
 		
@@ -290,41 +308,127 @@ module PmodJSTK_Demo(
 				QRED_PATH = 3'b010,
 				QGREEN_FILL = 3'b011,
 				QGREEN_PATH = 3'b100;
-			// // initialize board
-			// integer i;
-			
-			// initial begin
-			// 	for (i = 0; i <= 600; i = i + 1) begin
-			// 		board[i] = QEMPTY;
-			// 	end
-			// end
+
+
+// COLOR _______________________________________________________
+// .............................................................
+// _____________________________________________________________			
+			localparam
+				CEMPTY = 4'b0000,
+				CRED = 4'b1000,
+				CGREEN = 4'b0100,
+				CBLUE = 4'b0010;
+				// QBLACK = 8'b00010000,
+				// QWHITE = 8'b00001000;
+
+			wire [3:0] colorState1;
+			assign colorState1 = ({SW[0], SW[1], SW[2], SW[3]});
+
+			wire[3:0] colorState2;
+			assign colorState2 = CBLUE;
+		//	assign posData = (colorState1 == CEMPTY) ? 1 : 0; 
+// COLOR _______________________________________________________
+// .............................................................
+// _____________________________________________________________
+
 
 			integer k;
 			integer q;
-			reg [2:0] board [0:10] [0:10]; // 30 * 20
+			reg [3:0] board [0:10] [0:10]; // 10 * 10
 			initial begin
 				for (k = 0; k <= 10; k = k + 1)
 					for (q = 0; q <= 10; q = q + 1)
-						board[k][q] = QEMPTY;
-				board[0][0] = QRED_FILL;
-				board[0][1] = QRED_FILL;
-				board[1][0] = QRED_FILL;
-				board[1][1] = QRED_FILL;
+						board[k][q] = CEMPTY;
+				// board[0][0] = CBLUE;
+				// board[0][1] = CBLUE;
+				// board[1][0] = CBLUE;
+				// board[1][1] = CBLUE;
 			end
 
-			integer indexI;
-			integer indexJ;
-			
-			// RENDERING STATES
-			reg [1:0] DRState;
 			localparam
-				DSTART = 3'b00,
-				DMR = 3'b01,
-				DRF = 3'b10;
+				GINIT = 2'b00,
+				GPLAY = 2'b01,
+				GEND = 2'b10;
 
-			always @(posedge DIV_CLK[21])
-				begin
-					// if (reset)
+			reg [1:0] gameState;
+			initial begin
+				gameState = GPLAY;
+			end
+			// clock counter
+			reg [9:0] counter;
+			initial begin 
+				counter = 20;
+			end
+
+			/* State transition */
+			always @(posedge DIV_CLK[25]) begin
+				if (counter > 0) begin
+					counter <= counter - 1;
+				end
+				if (counter == 0) begin
+					gameState <= GEND;
+				end
+			end
+			
+			assign posData = count1 - count2; 
+			integer i, j;
+			reg[9:0] count1, count2;
+			reg [1:0] winner;
+			initial begin 
+				winner = 2'b00;
+				count1 = 0;
+				count2 = 0;
+			end
+
+			localparam BW [0:10][0:10] = {
+				11'b11100100010,
+				11'b10010100010,
+				11'b10010101010,
+				11'b11100101010,
+				11'b10010101010,
+				11'b10010101010,
+				11'b11100010100,
+				11'b00000000000,
+				11'b00000000000,
+				11'b00000000000,
+				11'b00000000000
+			};
+
+			localparam RW [0:10][0:10] = {
+				11'b11100100010,
+				11'b10010100010,
+				11'b10010101010,
+				11'b11100101010,
+				11'b10110101010,
+				11'b10010101010,
+				11'b10010010100,
+				11'b00000000000,
+				11'b00000000000,
+				11'b00000000000,
+				11'b00000000000
+			};
+
+			localparam GW [0:10][0:10] = {
+				11'b01100100010,
+				11'b10010100010,
+				11'b10000101010,
+				11'b10110101010,
+				11'b10010101010,
+				11'b10010101010,
+				11'b01100010100,
+				11'b00000000000,
+				11'b00000000000,
+				11'b00000000000,
+				11'b00000000000
+			};
+
+			always @(posedge DIV_CLK[22]) begin
+				if (gameState == GPLAY) begin
+					// if (reset) begin
+					// 	for (k = 0; k <= 25; k = k + 1)
+					// 		for (q = 0; q <= 25; q = q + 1)
+					// 			board[k][q] <= CEMPTY;
+					// end
 					// 	positionY<=16;
 					// 	positionX<=16;
 					if (dir == UP)
@@ -336,6 +440,26 @@ module PmodJSTK_Demo(
 					else if (dir == RIGHT)
 						positionX <= positionX + 2;	
 
+					if (dir != STILL) begin
+						if (board[{4'b0000, positionX[9:4]}][{ 4'b0000, positionY[9:4]}] == CEMPTY) begin
+							count1 <= count1 + 1;
+						end
+						else if (board[{4'b0000, positionX[9:4]}][{ 4'b0000, positionY[9:4]}] == colorState2) begin
+							count1 <= count1 + 1;
+							count2 <= count2 - 1;
+						end
+					end
+
+					if (dir2 != STILL) begin
+						if (board[{4'b0000, positionX2[9:4]}][{ 4'b0000, positionY2[9:4]}] == CEMPTY) begin
+							count2 <= count2 + 1;
+						end
+						else if (board[{4'b0000, positionX2[9:4]}][{ 4'b0000, positionY2[9:4]}] == colorState1) begin
+							count2 <= count2 + 1;
+							count1 <= count1 - 1;
+						end
+					end
+
 					// player2 ....................
 					if (dir2 == UP)
 						positionY2 <= positionY2 - 2;
@@ -345,29 +469,51 @@ module PmodJSTK_Demo(
 						positionX2 <= positionX2 - 2;
 					else if (dir2 == RIGHT)
 						positionX2 <= positionX2 + 2;	
-					// ............................
-					// drawing ....................
-					// if (board[{4'b0000, positionX[9:4]}][{ 4'b0000, positionY[9:4]}] == QRED_FILL) begin
-					// 	for (indexI = 0; indexI <= 30; indexI = indexI + 1) begin
-					// 		DRState = DSTART;
-					// 		for (indexJ = 0; indexJ <= 20; indexJ = indexJ + 1) begin
-					// 			case (DRState)
-					// 				DSTART: begin
-					// 					if (board[indexI][indexJ] == QRED_FILL || board[indexI][indexJ] == QRED_PATH) begin
-					// 						DRState = D
-					// 					end
-					// 				end
-					// 				DMR: begin
 
-					// 				end
-					// 			endcase
-					// 		end
-					// 	end
-					// end
-					// ............................
+					shootDir1 = (dir != STILL) ? dir : shootDir1;
+					shootDir2 = (dir2 != STILL) ? dir2 : shootDir2;
 
+					if (shoot1) begin
+						case (shootDir1)
+							UP: begin
+								board[{4'b0000, positionX[9:4]}][{ 4'b0000, positionY[9:4]} - 1] <= colorState1;
+								board[{4'b0000, positionX[9:4]}][{ 4'b0000, positionY[9:4]} - 2] <= colorState1;
+							end
+							DOWN: begin
+								board[{4'b0000, positionX[9:4]}][{ 4'b0000, positionY[9:4]} + 1] <= colorState1;
+								board[{4'b0000, positionX[9:4]}][{ 4'b0000, positionY[9:4]} + 2] <= colorState1;
+							end
+							LEFT: begin
+								board[{4'b0000, positionX[9:4]} - 1][{ 4'b0000, positionY[9:4]}] <= colorState1;
+								board[{4'b0000, positionX[9:4]} - 2][{ 4'b0000, positionY[9:4]}] <= colorState1;
+							end
+							RIGHT: begin
+								board[{4'b0000, positionX[9:4]} + 1][{ 4'b0000, positionY[9:4]}] <= colorState1;
+								board[{4'b0000, positionX[9:4]} + 2][{ 4'b0000, positionY[9:4]}] <= colorState1;
+							end
+						endcase
+					end
 
-
+					if (shoot2) begin
+						case (shootDir2)
+							UP: begin
+								board[{4'b0000, positionX2[9:4]}][{ 4'b0000, positionY2[9:4]} - 1] <= colorState2;
+								board[{4'b0000, positionX2[9:4]}][{ 4'b0000, positionY2[9:4]} - 2] <= colorState2;
+							end
+							DOWN: begin
+								board[{4'b0000, positionX2[9:4]}][{ 4'b0000, positionY2[9:4]} + 1] <= colorState2;
+								board[{4'b0000, positionX2[9:4]}][{ 4'b0000, positionY2[9:4]} + 2] <= colorState2;
+							end
+							LEFT: begin
+								board[{4'b0000, positionX2[9:4]} - 1][{ 4'b0000, positionY2[9:4]}] <= colorState2;
+								board[{4'b0000, positionX2[9:4]} - 2][{ 4'b0000, positionY2[9:4]}] <= colorState2;
+							end
+							RIGHT: begin
+								board[{4'b0000, positionX2[9:4]} + 1][{ 4'b0000, positionY2[9:4]}] <= colorState2;
+								board[{4'b0000, positionX2[9:4]} + 2][{ 4'b0000, positionY2[9:4]}] <= colorState2;
+							end
+						endcase
+					end
 					// if (positionX < 0)
 					// 	positionX <= 0;
 					// if (positionX > 640)
@@ -377,21 +523,45 @@ module PmodJSTK_Demo(
 					// if (positionY > 480)
 					// 	positionY <= 480;
 
-					// board[{ 4'b000, positionY[9:4]} * 30 + {4'b000, positionX[9:4]}] <= QRED_PATH; 
-					// board[{ 4'b000, positionY2[9:4]} * 30 + {4'b000, positionX2[9:4]}] <= QGREEN_PATH; 
-					board[{4'b0000, positionX[9:4]}][{ 4'b0000, positionY[9:4]}] <= QRED_PATH;
-					board[{4'b0000, positionX2[9:4]}][{ 4'b0000, positionY2[9:4]}] <= QGREEN_PATH;
+				
+					board[{4'b0000, positionX[9:4]}][{ 4'b0000, positionY[9:4]}] <= colorState1;
+					board[{4'b0000, positionX2[9:4]}][{ 4'b0000, positionY2[9:4]}] <= colorState2;
 				end
+				else if (gameState == GEND) begin
+				
 
-			wire R = (board[{4'b0000, CounterX[9:4]}][{4'b0000, CounterY[9:4]}] == QRED_PATH 
-				||board[{4'b0000, CounterX[9:4]}][{4'b0000, CounterY[9:4]}] == QRED_FILL); 
-					// CounterY>=({positionY[9:3], 3'b000}) && CounterY<=({positionY[9:3], 3'b111}) 
-			// 		&& CounterX>=({positionX[9:3], 3'b000}) && CounterX<=({positionX[9:3], 3'b111});
-			wire G = (board[{4'b0000, CounterX[9:4]}][{4'b0000, CounterY[9:4]}] == QGREEN_PATH 
-				||board[{4'b0000, CounterX[9:4]}][{4'b0000, CounterY[9:4]}] == QGREEN_FILL);  
-			//(board[{3'b000, CounterY[9:3]} * 30 + {3'b000, CounterX[9:3]}] == QGREEN_PATH 
-			//	||board[{3'b000, CounterY[9:3]} * 30 + {3'b000, CounterX[9:3]}] == QGREEN_FILL); //  CounterX>100 && CounterX<200 && CounterY[5:3]==7;
-			wire B = 0;
+					if (count1 > count2) begin
+						winner <= 2'b01;
+					end
+					else if (count1 < count2) begin
+						winner <= 2'b10;
+					end
+					else begin
+						winner <= 2'b11;
+					end
+					
+					// winner = 2;
+					// for (i = 0; i <= 10; i = i + 1) begin
+					// 	for (j = 0; j <= 10; j = j + 1) begin
+					// 		if (BW[i][j] == 0) begin
+					// 			board[i][j] <= CEMPTY;
+					// 		end
+					// 		else begin
+					// 			if (count1 >= count2)
+					// 				board[i][j] <= colorState1;
+					// 			else 
+					// 				board[i][j] <= colorState2;
+					// 		end
+					// 	end
+					// end
+					
+				end
+				
+			end
+
+			wire R = (board[{4'b0000, CounterX[9:4]}][{4'b0000, CounterY[9:4]}] == CRED); 
+			wire G = (board[{4'b0000, CounterX[9:4]}][{4'b0000, CounterY[9:4]}] == CGREEN); 
+			wire B = (board[{4'b0000, CounterX[9:4]}][{4'b0000, CounterY[9:4]}] == CBLUE);
 			
 		
 
@@ -403,14 +573,11 @@ module PmodJSTK_Demo(
 			end
 			//..................................................
 			//..................................................
-			
-			
-
 
 			
 			// Data to be sent to PmodJSTK, lower two bits will turn on leds on PmodJSTK
-			// assign sndData = {8'b100000, {SW[1], SW[2]}};
-			// assign sndData_D = {8'b100000, {SW[4], SW[5]}};
+			assign sndData = (winner == 2'b10) ? {8'b100000, 2'b11} : {8'b100000, 2'b00};
+			assign sndData_D = (winner == 2'b01) ? {8'b100000, 2'b11} : {8'b100000, 2'b00};
 
 			// Assign PmodJSTK button status to LED[2:0]
 			always @(sndRec or RST or jstkData) begin

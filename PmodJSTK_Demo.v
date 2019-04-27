@@ -242,6 +242,12 @@ module PmodJSTK_Demo(
 			reg [9:0] positionX;
 			reg [9:0] positionY2;
 			reg [9:0] positionX2;
+			initial begin
+				positionX = 40;
+				positionY = 40;
+				positionX2 = 70;
+				positionY2 = 70;
+			end
 
 			reg [2:0] shootDir1;
 			reg [2:0] shootDir2;
@@ -294,7 +300,8 @@ module PmodJSTK_Demo(
 			localparam
 				GINIT = 2'b00,
 				GPLAY = 2'b01,
-				GEND = 2'b10;
+				GEND = 2'b10,
+				GCLEAN = 2'b11;
 
 			reg [1:0] gameState;
 			initial begin
@@ -313,7 +320,9 @@ module PmodJSTK_Demo(
 						counter <= counter - 1;
 					end
 				end
-				
+				if (gameState == GCLEAN) begin
+					counter <= 60;
+				end
 			end
 			
 			assign posData = counter; 
@@ -326,11 +335,17 @@ module PmodJSTK_Demo(
 				count2 = 0;
 			end
 
+			// clean index;
+			reg [3:0] cleanI;
+			reg [3:0] cleanJ;
+
 			always @(posedge DIV_CLK[21]) begin
-				if (reset) begin
-					gameState <= GINIT;
-				end
-				else if (gameState == GINIT) begin
+				// if (SW[6]) begin
+				// 	gameState <= GCLEAN;
+				// 	cleanI <= 0;
+				// 	cleanJ <= 0;
+				// end
+				if (gameState == GINIT) begin
 					positionX <= 40;
 					positionY <= 40;
 					positionX2 <= 70;
@@ -519,7 +534,11 @@ module PmodJSTK_Demo(
 					board[{5'b00000, positionX2[9:5]}][{ 5'b00000, positionY2[9:5]}] <= colorState2;
 				end
 				else if (gameState == GEND) begin
-				
+					if (SW[6]) begin
+						gameState <= GCLEAN;
+						cleanI <= 0;
+						cleanJ <= 0;
+					end
 
 					if (count1 > count2) begin
 						winner <= 2'b01;
@@ -531,7 +550,23 @@ module PmodJSTK_Demo(
 						winner <= 2'b11;
 					end
 				end
-				
+				else if (gameState == GCLEAN) begin
+					cleanI <= cleanI + 1;
+					if (cleanI == 10) begin
+						cleanI <= 0;
+						cleanJ <= cleanJ + 1;
+					end
+					board[cleanI][cleanJ] = CEMPTY;
+					if (cleanI == 10 && cleanJ == 10) begin
+						gameState <= GINIT;
+						positionX <= 40;
+						positionY <= 40;
+						positionX2 <= 70;
+						positionY2 <= 70;
+						count1 <= 0;
+						count2 <= 0;
+					end
+				end
 			end
 
 			wire [9:0] currentX1;
@@ -548,13 +583,13 @@ module PmodJSTK_Demo(
 					 || ((currentX2 == {5'b00000, CounterX[9:5]}) && (currentY2 == {5'b00000, CounterY[9:5]}));
 
 			wire R = 	(CounterX > 353 || CounterY > 353) ? 0 :
-						((checkPos && gameState != GINIT) || CounterX[4:0] == 5'b00000 || CounterY[4:0] == 5'b00000) ? 1 :
+						((checkPos && gameState != GINIT && gameState != GCLEAN) || CounterX[4:0] == 5'b00000 || CounterY[4:0] == 5'b00000) ? 1 :
 						(board[{5'b00000, CounterX[9:5]}][{5'b00000, CounterY[9:5]}] == CRED);
 			wire G = 	(CounterX > 353 || CounterY > 353) ? 0 :
-						((checkPos && gameState != GINIT) || CounterX[4:0] == 5'b00000 || CounterY[4:0] == 5'b00000) ? 1 : 
+						((checkPos && gameState != GINIT && gameState != GCLEAN) || CounterX[4:0] == 5'b00000 || CounterY[4:0] == 5'b00000) ? 1 : 
 					 	(board[{5'b00000, CounterX[9:5]}][{5'b00000, CounterY[9:5]}] == CGREEN); 
 			wire B = 	(CounterX > 353 || CounterY > 353) ? 0 :
-						((checkPos && gameState != GINIT) || CounterX[4:0] == 5'b00000 || CounterY[4:0] == 5'b00000) ? 1 : 
+						((checkPos && gameState != GINIT && gameState != GCLEAN) || CounterX[4:0] == 5'b00000 || CounterY[4:0] == 5'b00000) ? 1 : 
 					 	(board[{5'b00000, CounterX[9:5]}][{5'b00000, CounterY[9:5]}] == CBLUE);
 			
 		
@@ -575,12 +610,12 @@ module PmodJSTK_Demo(
 
 			// Assign PmodJSTK button status to LED[2:0]
 			always @(sndRec or RST or jstkData) begin
-					if(RST == 1'b1) begin
-							LED <= 3'b000;
-					end
-					else begin
-							LED <= {jstkData[1], {jstkData[2], jstkData[0]}};
-					end
+				if(RST == 1'b1) begin
+						LED <= 3'b000;
+				end
+				else begin
+						LED <= {jstkData[1], {jstkData[2], jstkData[0]}};
+				end
 			end
 
 			

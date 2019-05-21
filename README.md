@@ -1,1 +1,1 @@
-# PaperCut
+# Splatoon
